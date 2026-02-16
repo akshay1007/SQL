@@ -1046,7 +1046,7 @@ with cte as (select continents, country , sum(sales) as total_sales from SalesIn
  cte_rk as (select  continents, country,total_sales, dense_rank() over (partition by continents order by total_sales desc  )rk from cte )
 select continents, country , total_sales from cte_rk where rk =1
 
---Question 33 :
+--Question 33 : Write a query to display the records where there are 3 or more days with 100+ people in stadium for those days.
 Create Table Stadium(
 id int,
 Visit_Date Date,
